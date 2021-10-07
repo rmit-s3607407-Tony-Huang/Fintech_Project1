@@ -10,21 +10,62 @@ Data Consultant: Anh Thi Dang
 
 ---
 ## Summary
-Our team has a combined capital of $50,000 and wishes to venture together and invest in a trading strategy across 3 asset classes: stocks, crypto and gold.
+Our team has a combined capital of $60,000 and wishes to venture together and invest in a trading strategy across 3 asset classes: stocks, crypto and gold.
 
 We have found in many finance literatures that the crossover moving average is a popular strategy people use and wish to explore this trading strategy as a possible technique to use to invest our funds.
+
+Based on our research, results suggest that a buy and hold approach is more superior, and we should allocate most of our investments to buy and hold rather than applying the popular  moving average strategy
+
+The Bitcoin data used for analysis and comparison included  a period where the market was in a booming trend for a new and highly innovative financial asset. This trend may not continue in the future.
+
+The performance on bitcoin buy & hold strategy could have shown as even more favourable had we been able to obtain data a bit earlier. The earliest data we could get was in Sept 2017.
+
+The result on the market analysis on the moving average strategy is a bit bias as the strategy was constructed on a very long time frame ( daily data )
 
 ---
 
 ## Major Findings
+1. Was there any relationship between these assets?
+
+Plotting the correlation of the three assets, little to no correlation is found.
+
+
+2. How should we best allocate the capital across these asset classes to minimize risk?
+
+Since there is little to no correlation, we decided to equally divide the funds into the three assets to hedge against large price movements of one asset.
+
+![](/images/asset_correlation.PNG)
+
+3. Which asset were inherently more risky?
+
+The boxplot of daily returns shows that the mean and standard deviation of bitcoin is the largest, and hence the most risky.
+
+![](/images/daily_return_boxplot.PNG)
+
+4. Which asset will this strategy work best for?
+
+The moving average strategy yields profits across all three assets, but little optimization was done to get better performance.
+
+5. Could a buy and hold strategy have performed better?
+
+The buy and hold strategy outperforms the moving average strategy in all three assets.
+
+![](/images/pnl.PNG)
+
+6. On what basis do we decide that this strategy is better for a 
+particular asset compared to the others?
+
+Using sharpe’s ratio, to normalize the profit against risk, the strategy can be compared across each asset.
+
+![](/images/sharpe_ratio.PNG)
 
 ---
 ## Installation
 ### Creating a new anaconda environment
 ```shell
 conda update anaconda
-conda create -n backtrade_env python=3.7 anaconda -y
-conda activate backtrade_env
+conda create -n backtrader_env python=3.7 anaconda -y
+conda activate backtrader_env
 conda install -c anaconda nb_conda -y
 conda install -c conda-forge nodejs=12 -y
 conda install -c pyviz holoviz -y
@@ -60,8 +101,15 @@ pip3 install -r requirements.txt
 ```shell
 jupyter lab
 ```
+
+### Launching a bokeh dashboard
+```shell
+panel serve visualizations.ipynb
+```
+
 ---
-**Multi Asset Class Market Analysis**
+
+<!-- **Multi Asset Class Market Analysis**
 
 **Team Members
 Anh Thi Dang
@@ -89,4 +137,4 @@ In addition we will apply out of sample testing to ensure performance of strateg
 Tony - project manager, initial backtrader implementation 
 Ash - visualization, pulling api data
 Viseth - documentation, code reviewing 
-Anh - dashboards, pulling api data
+Anh - dashboards, pulling api data -->
