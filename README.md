@@ -61,18 +61,18 @@ Using sharpe’s ratio, to normalize the profit against risk, the strategy can b
 
 ---
 ## Installation
-### Creating a new anaconda environment
+### 1. Creating a new anaconda environment
 ```shell
 conda update anaconda
 conda create -n backtrader_env python=3.7 anaconda -y
 conda activate backtrader_env
 conda install -c anaconda nb_conda -y
-conda install -c conda-forge nodejs=12 -y
 conda install -c pyviz holoviz -y
 conda install -c plotly plotly -y
 conda install -c conda-forge jupyterlab=2.2 -y
+conda install -c conda-forge nodejs=12 -y
 ```
-### To install PyViz, the for Jupyter Lab
+### 2. Install PyViz dependencies for Jupyter Lab
 ```shell
 # (OS X/Linux)
 export NODE_OPTIONS=--max-old-space-size=4096
@@ -93,16 +93,16 @@ unset NODE_OPTIONS
 # (Windows)
 set NODE_OPTIONS=
 ```
-### To install the the python dependencies
+### 3. Install python dependencies
 ```shell
 pip3 install -r requirements.txt
 ```
-### Opening Jupyter Lab
+### 4. Running inside Jupyter Lab
 ```shell
 jupyter lab
 ```
 
-### Launching a bokeh dashboard
+### 5. Launching a bokeh dashboard on localhost
 ```shell
 panel serve visualizations.ipynb
 ```
