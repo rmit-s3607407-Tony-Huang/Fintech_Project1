@@ -5,9 +5,6 @@ pandas
 pathlib
 numpy==1.19
 matplotlib==3.0.3
-plotly-express
 panel
 backtrader
 bokeh
-hvplot
-plotly
